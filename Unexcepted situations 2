@@ -1,3 +1,8 @@
+my_list =[1,2,3,4,5]
+try :
+    my_list[6]
+except IndexError:
+        print("That index is not in the list")
 my_dict = {"a":1, "b":2, "c":3}
 try:
 		value = my_dict["d"]
@@ -9,3 +14,18 @@ try:
  my_list[6]
 except IndexError:
  print("That index is not in the list!")
+
+
+a = {"a": 5,"b": 25,"c": 125}
+try:
+    print(a["d"])
+except KeyError: 
+    try:
+        print("a:", a["a"])
+    except:
+        print("No value exists for keys 'a' and 'd'")
+    finally:
+        print("Nested finally")
+finally:
+    print("Finally")
+
