@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>voice search</title>
+</head>
+<body>
+    <h1>Voice Search</h1>
+    <input type="text" id="search" placeholder="Search...">
+    <button id="voice-search-btn">!</button>
+
+    <script>
+        const searchInput = document.getElementById('search');
+        const voiceSearchBtn= document.getElementById('voice-search-btn');
+        const recogniton = new (window.SpeechRecognition / window.webkitSpeechRecogniton)();
+
+        recogniton.onresult = (event)=> {
+            const query = event.results[0][0].trasncript;
+        };
+        voiceSearchBtn.addEventListener('click',()=>{recogniton.start()})
+
+
+    </script>
+</body>
+</html>
